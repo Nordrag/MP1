@@ -23,11 +23,11 @@ public class CarConsumption
         res = cons && dist && perliter && taxes;
     }
 
-    public string GetResult()
+    public float GetResult()
     {
         var consumed = distance / consumption;
         var costOfConsuption = consumed * pricePerLiter;
-        return ((float)Math.Round((costOfConsuption + roadTaxes), 2)).ToString();
+        return (float)Math.Round((costOfConsuption + roadTaxes), 2);
     }
 }
 

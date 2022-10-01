@@ -26,9 +26,10 @@ public class VectorDistance
         res = fx && fy && sx && sy;
     }
 
-    public string GetResult()
+    public float GetResult()
     {
-        return Vector2.Distance(a, b).ToString();
+        float dist = Vector2.Distance(a, b);
+        return (float)Math.Round(dist, 3);
     }
 }
 

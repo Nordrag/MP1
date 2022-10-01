@@ -18,9 +18,9 @@ public class RadToDegree
         res = rad;
     }
 
-    public string GetResult()
+    public float GetResult()
     {
-        return (degree * Deg2Rad).ToString();
+        return degree * Deg2Rad;
     }
 }
 
