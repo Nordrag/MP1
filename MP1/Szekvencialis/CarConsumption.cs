@@ -13,7 +13,7 @@ public class CarConsumption
     {        
         Console.WriteLine("fogyasztás / 100km");
         var cons =  float.TryParse(Console.ReadLine(), out consumption); //try - catch
-        Console.WriteLine("távolság");
+        Console.WriteLine("távolság (km)");
         var dist = float.TryParse(Console.ReadLine(), out distance);
         Console.WriteLine("ft / liter");
         var perliter = float.TryParse(Console.ReadLine(), out pricePerLiter);       
@@ -23,11 +23,11 @@ public class CarConsumption
         res = cons && dist && perliter && taxes;
     }
 
-    public float GetResult()
+    public string GetResult()
     {
         var consumed = distance / consumption;
         var costOfConsuption = consumed * pricePerLiter;
-        return (float)Math.Round((costOfConsuption + roadTaxes), 2);
+        return ((float)Math.Round((costOfConsuption + roadTaxes), 2)).ToString();
     }
 }
 

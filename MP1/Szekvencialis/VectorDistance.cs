@@ -20,12 +20,15 @@ public class VectorDistance
         Console.WriteLine("második y");
         bool sy = float.TryParse(Console.ReadLine(), out by);
 
+        a = new Vector2(ax, ay);
+        b = new Vector2(bx, by);
+
         res = fx && fy && sx && sy;
     }
 
-    public float GetResult()
+    public string GetResult()
     {
-        return Vector2.Distance(a, b);
+        return Vector2.Distance(a, b).ToString();
     }
 }
 
@@ -38,7 +41,8 @@ public struct Vector2
         //unity engine source code cuz im lazy
         float num = a.x - b.x;
         float num2 = a.y - b.y;
-        return (float)Math.Sqrt(num * num + num2 * num2);
+        float res = (float)Math.Sqrt(num * num + num2 * num2);
+        return (float)Math.Round(res, 3);
     }
 
     public Vector2(float X, float Y)
