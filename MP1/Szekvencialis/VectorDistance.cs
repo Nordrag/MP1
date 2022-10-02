@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class VectorDistance
+public class VectorDistance: BaseExcersize
 {
     Vector2 a, b;
 
-    public void AskForData(out bool res)
+    public override void AskForData(out bool res)
     {
         float ax, ay, bx, by;
         Console.WriteLine("első x");
@@ -26,10 +26,10 @@ public class VectorDistance
         res = fx && fy && sx && sy;
     }
 
-    public float GetResult()
+    public override void PrintResult()
     {
         float dist = Vector2.Distance(a, b);
-        return (float)Math.Round(dist, 3);
+        Console.WriteLine((float)Math.Round(dist, 3));
     }
 }
 

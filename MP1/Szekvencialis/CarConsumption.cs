@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class CarConsumption
+public class CarConsumption : BaseExcersize
 {
     float consumption, distance, pricePerLiter;
     int roadTaxes;
 
-    public void AskForData(out bool res)
+    public override void AskForData(out bool res)
     {        
         Console.WriteLine("fogyasztás / 100km");
         var cons =  float.TryParse(Console.ReadLine(), out consumption); //try - catch
@@ -22,12 +22,12 @@ public class CarConsumption
 
         res = cons && dist && perliter && taxes;
     }
-
-    public float GetResult()
+   
+    public override void PrintResult()
     {
         var consumed = distance / consumption;
         var costOfConsuption = consumed * pricePerLiter;
-        return (float)Math.Round((costOfConsuption + roadTaxes), 2);
+        Console.WriteLine((float)Math.Round((costOfConsuption + roadTaxes), 2));
     }
 }
 

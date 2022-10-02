@@ -13,7 +13,7 @@ switch (selection)
 
 		if (carInputSuccess)
 		{
-			Console.WriteLine(carConsumption.GetResult());
+			carConsumption.PrintResult();
 		}
 		else
 		{
@@ -27,7 +27,7 @@ switch (selection)
 
 		if (containerInputSuccess)
 		{
-			Console.WriteLine(container.GetResult());
+			container.PrintResult();
 		}
         else
         {
@@ -43,7 +43,7 @@ switch (selection)
 
 		if (distanceInputSuccess)
 		{
-			Console.WriteLine(distance.GetResult());
+			distance.PrintResult();
 		}
         else
         {
@@ -59,7 +59,22 @@ switch (selection)
 
 		if (radInputSuccess)
 		{
-			Console.WriteLine(radToDegree.GetResult());
+			radToDegree.PrintResult();
+		}
+        else
+        {
+            Console.WriteLine("hibás input, lusta voltam loopolni szóval most megáll");
+        }
+        break;
+	case 5:
+
+		Railway railway = new Railway();
+		bool railwayInputSuccess;
+		railway.AskForData(out railwayInputSuccess);
+
+		if (railwayInputSuccess)
+		{
+			railway.PrintResult();
 		}
         else
         {

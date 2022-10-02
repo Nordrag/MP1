@@ -5,22 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class RadToDegree
+public class RadToDegree : BaseExcersize
 {
     //unity engine source code again
     const float Deg2Rad = (float)Math.PI / 180f;
     float degree;
 
-    public void AskForData(out bool res)
+    public override void AskForData(out bool res)
     {
         Console.WriteLine("add meg a fokot");
         bool rad = float.TryParse(Console.ReadLine(), out degree);
         res = rad;
-    }
+    }      
 
-    public float GetResult()
+    public override void PrintResult()
     {
-        return degree * Deg2Rad;
+        Console.WriteLine(degree * Deg2Rad);
     }
 }
 
