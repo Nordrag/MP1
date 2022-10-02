@@ -1,6 +1,6 @@
 ﻿int selection;
 
-Console.WriteLine("válassz feladatot (1, autós, 2 festék, 3 pontok távolsága, 4 radian");
+Console.WriteLine("válassz feladatot (1, autós, 2 festék, 3 pontok távolsága, 4 radian, 5 vonatos, 6 abszolút)");
 selection = int.Parse(Console.ReadLine());
 
 switch (selection)
@@ -75,6 +75,20 @@ switch (selection)
 		if (railwayInputSuccess)
 		{
 			railway.PrintResult();
+		}
+        else
+        {
+            Console.WriteLine("hibás input, lusta voltam loopolni szóval most megáll");
+        }
+        break;
+	case 6:
+		Absolute abs = new Absolute();
+		bool absInputSuccess;
+		abs.AskForData(out absInputSuccess);
+
+		if (absInputSuccess)
+		{
+			abs.PrintResult();
 		}
         else
         {
